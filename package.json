@@ -1,0 +1,55 @@
+{
+  "name": "bootbox-svelte",
+  "version": "1.0.0",
+  "description": "A svelte version of bootbox package",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "svelte": "src/index.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "publish": "git push --tags && npm publish",
+    "dev": "rollup -c -w"
+  },
+  "keywords": [
+    "bootstrap",
+    "bootbox",
+    "svelte",
+    "alert",
+    "confirm",
+    "prompt",
+    "modal"
+  ],
+  "author": "Timothé Malahieude",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmalahie/bootbox-svelte"
+  },
+  "bugs": {
+    "url": "https://github.com/tmalahie/bootbox-svelte/issues"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@tsconfig/svelte": "^2.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "sirv-cli": "^1.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "4.3.5"
+  },
+  "dependencies": {
+    "sveltestrap": "*"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
