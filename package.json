@@ -1,6 +1,6 @@
 {
   "name": "bootbox-svelte",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A svelte version of bootbox package",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
