@@ -4,6 +4,7 @@
   "compilerOptions": {
     "declaration": true,
     "outDir": "dist",
+    "types": ["svelte"]
   },
 
   "include": ["src/**/*"],
