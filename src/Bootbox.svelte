@@ -54,12 +54,15 @@
   onDestroy(unsubscribe);
 
   let value;
+  $: lines = $params?.message?.split(/\r?\n/) ?? [];
 </script>
 
 <div>
   <Modal isOpen={$params?.type === "alert"} toggle={closeModal}>
     <ModalBody>
-      {$params.message}
+      {#each lines as line}
+        <div>{line}</div>
+      {/each}
     </ModalBody>
     <ModalFooter>
       <Button data-autofocus="alert" type="submit" color="primary" on:click={handleSubmit}>Ok</Button>
@@ -67,7 +70,9 @@
   </Modal>
   <Modal isOpen={$params?.type === "confirm"} toggle={closeModal}>
     <ModalBody>
-      {$params.message}
+      {#each lines as line}
+        <div>{line}</div>
+      {/each}
     </ModalBody>
     <ModalFooter>
       <Button data-autofocus="confirm" type="submit" color="primary" on:click={handleSubmit}>Ok</Button>
@@ -79,7 +84,11 @@
   <Modal isOpen={$params?.type === "prompt"} toggle={closeModal}>
     <form on:submit|preventDefault={handleSubmit}>
       <ModalBody>
-        <label for="bootbox-input-value" class="d-block">{$params.message}</label>
+        <label for="bootbox-input-value" class="d-block mb-2">
+          {#each lines as line}
+            <div>{line}</div>
+          {/each}
+        </label>
         <Input data-autofocus="prompt" type="text" id="bootbox-input-value" bind:value />
       </ModalBody>
       <ModalFooter>
