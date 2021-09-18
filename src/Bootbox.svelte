@@ -40,7 +40,7 @@
   const unsubscribe = params.subscribe((newParams) => {
     if (newParams) {
       if (newParams.type === "prompt")
-        value = newParams.defaultValue;
+        value = String(newParams.defaultValue ?? "");
       document.activeElement?.["blur"]?.();
       setTimeout(() => {
         const input = document.querySelector(`.modal .modal-dialog .modal-content [data-autofocus="${newParams.type}"]`);
@@ -54,7 +54,7 @@
   onDestroy(unsubscribe);
 
   let value;
-  $: lines = $params?.message?.split(/\r?\n/) ?? [];
+  $: lines = String($params?.message).split(/\r?\n/);
 </script>
 
 <div>

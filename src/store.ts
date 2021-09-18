@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 import type { Writable } from "svelte/store";
 
 type BootboxParams = {
-    message: string;
+    message: any;
   } & (
     | {
         type: "alert";
@@ -14,7 +14,7 @@ type BootboxParams = {
       }
     | {
         type: "prompt";
-        defaultValue: string;
+        defaultValue: any;
         callback?: (res?: string) => void;
       }
   );
